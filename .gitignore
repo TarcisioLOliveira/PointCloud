@@ -1,0 +1,5 @@
+debug/
+*.swp
+build_debug.sh
+cmake/
+.ycm*
