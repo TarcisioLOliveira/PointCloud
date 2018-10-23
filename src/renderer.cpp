@@ -17,7 +17,7 @@ render_program(){
 	float ratio = width / (float) height;
 	
 	//this->projection = glm::ortho(width/2.0f, -width/2.0f, 0.0f, height/1.0f, -10000.0f, 10000.0f);
-	this->projection = glm::perspective(45.0f, ratio, 0.1f, 10000.0f);
+	this->projection = glm::perspective(45.0f, ratio, 0.1f, 100.0f);
 	glViewport(0, 0, width, height);
     this->render_program.attach(this->render_shader);
     this->render_program.attach(this->color_shader);
