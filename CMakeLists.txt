@@ -10,6 +10,7 @@ if(WIN32)
     include_directories(C:/glm)
     SET(GLFW3_ROOT C:/glfw-3.1.2 CACHE PATH "GLFW root")
     SET(GLEW_ROOT C:/glew-1.13.0 CACHE PATH "GLEW root")
+endif()
 
 SET(GLEW_USE_STATIC_LIBS ON)
 

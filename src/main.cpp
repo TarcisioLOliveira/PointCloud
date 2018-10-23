@@ -1,6 +1,5 @@
 #include <GL/glew.h>
 #include <GLFW/glfw3.h>
-#include <SOIL2/SOIL2.h>
 #include <cstdlib>
 #include <cstdio>
 #include <iostream>
@@ -113,7 +112,7 @@ int main(int argc, const char* argv[]){
         std::ifstream file(argv[i]);
         while(!file.eof()){
             //std::getline(file, line, '\n');
-            file >> vertex.x >> vertex.y >> vertex.z >> color.r >> color.g >> color.b;
+            file >> vertex.x >> vertex.y >> vertex.z >> color.b >> color.g >> color.r;
             points.push_back({
                 vertex,
                 glm::vec4(color/255.0f, 1.0)
