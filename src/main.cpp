@@ -112,8 +112,9 @@ int main(int argc, const char* argv[]){
         std::ifstream file(argv[i]);
         while(!file.eof()){
             //std::getline(file, line, '\n');
-            file >> vertex.z >> vertex.x >> vertex.y >> color.b >> color.g >> color.r;
-            vertex.x = -vertex.x;
+            file >> vertex.x >> vertex.z >> vertex.y >> color.b >> color.g >> color.r;
+            vertex.z = - vertex.z;
+            vertex.y = - vertex.y;
             points.push_back({
                 vertex,
                 glm::vec4(color/255.0f, 1.0)
