@@ -67,19 +67,8 @@ void Camera::move(uint8_t direction){
 }
 
 void Camera::rotate(double front, double side){
-	if(front > 0){
-		if(rotation.x + front < 1.50){
-			this->rotation.x += front;
-		} else {
-			this->rotation.x = 1.50;
-		}
-    } else if(front < 0){
-		if(rotation.x + front > -1.50){
-			this->rotation.x += front;
-		} else {
-			this->rotation.x = -1.50;
-		}
-    }
+   const double PI = 3.141592;
+    this->rotation.x = std::max(-PI/2,  std::min(rotation.x + front, PI/2));
     this->rotation.z += side;
 
 	this->direction = glm::rotate( this->orig_direction, this->rotation.x, {this->orig_direction.y, -this->orig_direction.x, 0.0f});

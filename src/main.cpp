@@ -45,7 +45,7 @@ int main(int argc, const char* argv[]){
         printf("GLEW init failure\n");
     }
 
-	default_camera = Camera({0.0f, 0.0f, 0.0f}, {0.0f, -1.0f, 0.0f}, mainWindow);
+	default_camera = Camera({0.0f, 0.0f, 0.0f}, {1.0f, 0.0f, 0.0f}, mainWindow);
 
     auto key_callback = [](GLFWwindow* window, int key, int scancode, int action, int mods)mutable{
 		if(key == GLFW_KEY_ESCAPE && action == GLFW_PRESS){
@@ -112,9 +112,9 @@ int main(int argc, const char* argv[]){
         std::ifstream file(argv[i]);
         while(!file.eof()){
             //std::getline(file, line, '\n');
-            file >> vertex.x >> vertex.z >> vertex.y >> color.b >> color.g >> color.r;
-            vertex.z = - vertex.z;
-            vertex.y = - vertex.y;
+            file >> vertex.x >> vertex.y >> vertex.z >> color.b >> color.g >> color.r;
+            //vertex.z = - vertex.z;
+            //vertex.y = - vertex.y;
             points.push_back({
                 vertex,
                 glm::vec4(color/255.0f, 1.0)
@@ -133,5 +133,5 @@ int main(int argc, const char* argv[]){
 
     glfwDestroyWindow(mainWindow);
     glfwTerminate();
-    return 0;
+        return 0;
 }
